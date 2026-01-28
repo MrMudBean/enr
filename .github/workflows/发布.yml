@@ -14,6 +14,14 @@ on:
         required: false
         default: ''
         type: string
+      package:
+        description: '要发布的包'
+        required: true
+        type: choice
+        options:
+          - core
+          - all
+        default: 'all'
 
 # 新的 OpenID Connect 验证方式
 # 无需手动填写 NODE_AUTH_TOKEN 且定期更换
