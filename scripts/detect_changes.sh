@@ -17,6 +17,7 @@ main() {
     for file in $CHANGED_FILES; do
         if [[ $file == packages/* ]]; then
             PACKAGE_DIR=$(echo $file | cut -d'/' -f2)
+            echo "本次检测文件夹：「${PACKAGE_DIR}」"
             if [[ $PACKAGE_DIR == "shared" || $PACKAGE_DIR == "preview" ]]; then 
                 continue # 跳过当前循环，不加入数组
             fi;

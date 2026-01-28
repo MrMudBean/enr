@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "enr",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "一个 earthnut 的 react ui",
   "scripts": {
     "vjj": "vjj",
@@ -14,8 +14,8 @@
     "build:css-pre": "node ./scripts/build-css.js pre",
     "build:css": "node ./scripts/build-css.js",
     "b": "pnpm run build:css-pre && rollup --config rollup.config.js && tsc -p tsconfig.build.json && pnpm run build:css",
-    "build": "cd ../shared && pnpm build && cd ../core && jja rm dist run NODE_ENV=production 'pnpm run b' && node scripts/clean-package-json.js",
-    "test": "cd ../shared && pnpm test && cd ../core && jja rm dist run NODE_ENV='development' 'pnpm run b' && cd ../preview && pnpm install",
+    "build": "cd ../shared && pnpm build && cd ../enr && jja rm dist run NODE_ENV=production 'pnpm run b' && node scripts/clean-package-json.js",
+    "test": "cd ../shared && pnpm test && cd ../enr && jja rm dist run NODE_ENV='development' 'pnpm run b' && cd ../preview && pnpm install",
     "build:local": "node ../../scripts/build-local.js"
   },
   "overrides": {
