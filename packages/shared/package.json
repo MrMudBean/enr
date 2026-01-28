@@ -1,0 +1,71 @@
+{
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/es/src/index.d.ts",
+  "author": {
+    "name": "泥豆君",
+    "email": "Mr.MudBean@outlook.com",
+    "url": "https://earthnut.dev"
+  },
+  "description": "enr 内部共享方法",
+  "sideEffects": false,
+  "name": "zza",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",
+    "build": "jja cls rm dist && jja run NODE_ENV=production 'pnpm run b' run node ./scripts/clean-package-json.js",
+    "test": "jja cls rm dist && jja run NODE_ENV=development 'pnpm run b' run node ./scripts/clean-package-json.js",
+    "diff": "jja pkg --diff",
+    "prepublishOnly": "pjj",
+    "push": "gvv",
+    "push:version": "gvv",
+    "vjj": "vjj",
+    "lint": "jja cls && eslint . --fix",
+    "beautify": "jja cls && prettier . --write"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "default": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/es/src/index.d.ts"
+    },
+    "./cookie": {
+      "default": "./dist/es/cookie.js",
+      "import": "./dist/es/cookie.js",
+      "require": "./dist/cjs/cookie.js",
+      "types": "./dist/es/src/cookie.d.ts"
+    },
+    "./log": {
+      "default": "./dist/es/log-development.js",
+      "import": "./dist/es/log-development.js",
+      "require": "./dist/cjs/log-development.js",
+      "types": "./dist/es/src/log-development.d.ts"
+    },
+    "./storage-store": {
+      "default": "./dist/es/storage-store.js",
+      "import": "./dist/es/storage-store.js",
+      "require": "./dist/cjs/storage-store.js",
+      "types": "./dist/es/src/storage-store.d.ts"
+    },
+    "./storage": {
+      "default": "./dist/es/storage.js",
+      "import": "./dist/es/storage.js",
+      "require": "./dist/cjs/storage.js",
+      "types": "./dist/es/src/storage.d.ts"
+    },
+    "./sys": {
+      "default": "./dist/es/sys.js",
+      "import": "./dist/es/sys.js",
+      "require": "./dist/cjs/sys.js",
+      "types": "./dist/es/src/sys.d.ts"
+    }
+  }
+}

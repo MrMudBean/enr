@@ -1,4 +1,6 @@
 import webpack from 'webpack';
+// 该文件已废弃 ⚠️
+
 /**
  * 头添加 'use client';
  *

@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { TabItemProps } from '../../types';
 import { css, styled } from 'styled-components';
+import type { TabItemProps } from '../../types';
 
 /**  公用代码  */
 const activeOrHover = css`
@@ -19,7 +19,13 @@ const LiContent = styled.li`
   padding: 0px;
 `;
 
-/**  内容区  */
+/**
+ * ##  内容区
+ *
+ * @param root0
+ * @param root0.$type
+ * @param root0.$active
+ */
 const LinkContent = styled.span<{
   $active?: boolean;
   $type?: 'link';
@@ -62,7 +68,11 @@ const LinkContent = styled.span<{
     `}
 `;
 
-/**  链接子项  */
+/**
+ *  链接子项
+ * @param root0
+ * @param root0.data
+ */
 export function TabItem({ data }: TabItemProps) {
   const path = usePathname();
 

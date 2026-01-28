@@ -3,7 +3,9 @@ packages:
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
+  - core-js
   - esbuild
+  - fsevents
   - sharp
   - unrs-resolver
   - workerd

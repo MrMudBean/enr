@@ -1,15 +1,21 @@
-import { TabListItem } from '@/theme/Sidebar/types';
-import { _en } from 'packages/enr/index.server';
-import { HTMLAttributes, useState } from 'react';
+import { _en } from 'enr';
+import { useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import type { TabListItem } from '@/theme/Sidebar/types';
 
 const id = 'radio-theme';
 
 export const radioItem: TabListItem = {
-  text: '单选按钮',
+  label: '单选按钮',
   url: '#'.concat(id),
 };
 
-/**  单选按钮  */
+/**
+ *  单选按钮
+ * @param root0
+ * @param root0.cum
+ * @param root0.checked
+ */
 function Radio({
   cum: i,
   checked,
@@ -30,7 +36,7 @@ export function RadioDemoTheme() {
   const [checkedPrefix, setCheckedPrefix] = useState(0);
 
   return (
-    <div id={id} className={_en('en-style')}>
+    <div id={id} className={_en('style')}>
       <form>
         <fieldset>
           <legend>请选择一个</legend>

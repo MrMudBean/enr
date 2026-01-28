@@ -1,19 +1,19 @@
 'use client';
 
-import { BackgroundRipple } from 'components/ripples';
+import { BackgroundRipple, en, type RippleEle } from 'enr';
 import React, { useRef, useState } from 'react';
-import styles from './index.module.scss';
 import { xcn } from 'xcn';
-import { RippleEle } from 'components/ripples/types';
+import styles from './index.module.scss';
 /**
  * 涟漪页
  */
 export default function RipplesPage() {
   const rippleRef = useRef<RippleEle>(null);
-  const [background, setBackground] = useState<string | string[] | null>(null);
+  const [background, setBackground] = useState<string | string[] | null>(['#a63', '#361', '#009']);
 
   /**
    * 切换状态
+   * @param e
    */
   function togglePlayingState(e: React.MouseEvent) {
     rippleRef.current?.toggleState();
@@ -21,7 +21,10 @@ export default function RipplesPage() {
     e.stopPropagation();
   }
 
-  /**  更改当前的样式  */
+  /**
+   *  更改当前的样式
+   * @param e
+   */
   function setBackgroundValue(e: React.MouseEvent<HTMLButtonElement>) {
     const target = e.target as HTMLButtonElement;
     const index = Number(target.dataset['index']);
@@ -41,7 +44,6 @@ export default function RipplesPage() {
       id="ripple"
       onContextMenu={togglePlayingState}
       data-alias="ripple 外壳"
-      style={{}}
     >
       <BackgroundRipple
         ref={rippleRef}
@@ -63,9 +65,9 @@ export default function RipplesPage() {
           darkMode,
         }}
       >
-        <div className={xcn('en-center')}>
+        <div className={en('center')}>
           <h1>侠客行</h1>
-          <div className={xcn('en-text-right', 'en-text-small')}>(唐)李白</div>
+          <div className={en('text-right', 'text-small')}>(唐)李白</div>
           {[
             '赵客缦胡缨，吴钩霜月明。',
             '银鞍照白马，飒沓如流星。',

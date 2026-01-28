@@ -5,6 +5,8 @@ import { isUndefined } from 'a-type-of-js';
 /**
  *
  * 构建许可证明及写入 index.mjs 文件内容
+ * 
+ * 该文件已废弃  ⚠️
  *
  */
 const __dirname = import.meta.dirname;

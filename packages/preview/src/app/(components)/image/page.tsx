@@ -1,7 +1,6 @@
-import { Image } from 'components/image/';
-
-import styles from './index.module.scss';
+import { Image } from 'enr';
 import { xcn } from 'xcn';
+import styles from './index.module.scss';
 
 /**  图像测试  */
 export default function ImagePage() {

@@ -1,8 +1,14 @@
+/**
+ *
+ */
 class SysInfo {
+  /**
+   *
+   * @param str
+   */
   #getMedia(str: string) {
     return (
-      window?.matchMedia(/:/.test(str) && !/\(|\)/.test(str) ? `(${str})` : str)
-        .matches ?? false
+      window?.matchMedia(/:/.test(str) && !/\(|\)/.test(str) ? `(${str})` : str).matches ?? false
     );
   }
   /**
@@ -61,8 +67,10 @@ class SysInfo {
   get isOrientation() {
     const orientation: OrientationType =
       (screen.orientation || {}).type ||
+      // eslint-disable-next-line jsdoc/check-tag-names
       /**  @ts-expect-error: 兼容 moz 浏览器  */
       screen.mozOrientation ||
+      // eslint-disable-next-line jsdoc/check-tag-names
       /**  @ts-expect-error: 兼容 ms 浏览器  */
       screen.msOrientation;
     /**
@@ -74,11 +82,7 @@ class SysInfo {
      *
      *
      */
-    if (
-      orientation === 'landscape-primary' ||
-      orientation === 'landscape-secondary'
-    )
-      return false;
+    if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') return false;
     return true;
   }
 }

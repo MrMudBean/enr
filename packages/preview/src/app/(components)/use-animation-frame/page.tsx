@@ -1,10 +1,10 @@
 'use client';
-import { _en } from 'customHooks/use-xcn';
-import { useAnimationFrame } from 'customHooks/useAnimationFrame';
-import { dog } from 'packages/enr/dog';
+
+import { _en, useAnimationFrame } from 'enr';
 import { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import { xcn } from 'xcn';
+import { dog } from 'zza/log';
 
 const Example = styled.div`
   box-shadow: 1px 1px 24px #0f06;
@@ -59,7 +59,7 @@ export default function UseAnimationFramePage() {
 
   return (
     <Example
-      className={xcn(_en('en-center', 'en-center', 'en-text-center', 'en-cursor-pointer'))}
+      className={xcn(_en('center', 'center', 'text-center', 'cursor-pointer'))}
       onClick={changeState}
       style={{
         backgroundColor: data.state ? 'var(--en-color-red-40)' : 'var(--en-color-darkness-90)',

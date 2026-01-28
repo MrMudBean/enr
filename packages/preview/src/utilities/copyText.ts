@@ -20,6 +20,10 @@ declare global {
   };
 }
 
+/**
+ *
+ * @param text
+ */
 export default function copyText(text: string) {
   const { clipboard } = navigator;
   /** 新式写法 */

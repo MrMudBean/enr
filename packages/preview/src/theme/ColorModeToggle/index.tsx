@@ -1,9 +1,12 @@
 'use client';
 
-import { useColorMode } from 'packages/enr/index.client';
-import { HTMLAttributes } from 'react';
+import { useColorMode } from 'enr';
+import type { HTMLAttributes } from 'react';
 
-/**  主题色值模式切换  */
+/**
+ *  主题色值模式切换
+ * @param props
+ */
 export function ColorModeToggle(props: HTMLAttributes<HTMLDivElement>) {
   const { colorMode, toggleColorMode } = useColorMode();
 

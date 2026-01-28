@@ -1,5 +1,5 @@
+import type { Metadata } from 'next';
 import { EmptyLayout } from '@/theme/EmptyLayout';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '布局部分的校验与测验',

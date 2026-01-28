@@ -1,5 +1,5 @@
+import type { Metadata } from 'next';
 import { EmptyLayout } from '@/theme/EmptyLayout';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '背景涟漪部分',

@@ -1,9 +1,9 @@
-import { TabList } from '@/theme/Sidebar/types';
+import type { TabList } from '../../theme/Sidebar/types';
 
 export const styles_tab_bar_list: TabList = [
   {
     label: '下载',
-    url: 'styles/loading',
+    url: '/styles/loading',
   },
   {
     label: '组件',

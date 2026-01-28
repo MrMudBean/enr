@@ -1,17 +1,17 @@
-import { TabListItem } from '@/theme/Sidebar/types';
-import { _en } from 'packages/enr/index.server';
+import { _en } from 'enr';
+import type { TabListItem } from '@/theme/Sidebar/types';
 
 export const id = 'headers-theme';
 
 export const headersItems: TabListItem = {
-  text: '标题们',
+  label: '标题们',
   url: '#'.concat(id),
 };
 
 /**  标题们的展示  */
 export function HeadersMode() {
   return (
-    <div className={_en('en-style')}>
+    <div className={_en('style')}>
       <h1>标题一</h1>
       <h2>标题二</h2>
       <h3>标题三</h3>

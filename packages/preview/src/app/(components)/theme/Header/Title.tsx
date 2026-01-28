@@ -1,5 +1,6 @@
 'use client';
-import { _en } from 'packages/enr/index.server';
+
+import { _en } from 'enr';
 import { styled } from 'styled-components';
 
 const TitleContainer = styled.div`
@@ -10,6 +11,6 @@ const TitleContainer = styled.div`
 /**  主题样式模型的头  */
 export function ThemeModeTitle() {
   return (
-    <TitleContainer className={_en('en-text-center', 'en-full-container')}>样式展示</TitleContainer>
+    <TitleContainer className={_en('text-center', 'full-container')}>样式展示</TitleContainer>
   );
 }

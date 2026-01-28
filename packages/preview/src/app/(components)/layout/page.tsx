@@ -1,15 +1,17 @@
 'use client';
+
 import {
+  _en,
   EnLayout,
   LayoutContent,
   LayoutFooter,
   LayoutHeader,
   LayoutSideBar,
-} from 'components/layout';
-import { Dispatch, HTMLAttributes, SetStateAction, useState } from 'react';
+  Switch,
+} from 'enr';
+import type { Dispatch, HTMLAttributes, SetStateAction } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import { Switch } from 'packages/enr/index.client';
-import { _en } from 'packages/enr/index.server';
 
 /** 测试组件的块，为了让其看起来更明显  */
 const LayoutContainer = styled.div`
@@ -23,9 +25,12 @@ const LayoutContainer = styled.div`
   overflow: hidden;
 `;
 
-/**  大标题  */
+/**
+ *  大标题
+ * @param props
+ */
 function H1(props: HTMLAttributes<HTMLHeadElement>) {
-  return <h1 {...props} className={_en('en-text-center', 'en-h1', 'en-color-text')} />;
+  return <h1 {...props} className={_en('text-center', 'h1', 'color-text')} />;
 }
 
 /**  布局测试页面  */
@@ -77,7 +82,7 @@ export default function LayoutDemoPage() {
         <LayoutHeader
           height={headerHeight}
           noSticky={headerNoSticky}
-          className={_en('en-dark')}
+          className={_en('dark')}
           style={{
             backgroundColor: 'var(--en-color-red)',
             opacity: 0.3,
@@ -91,7 +96,7 @@ export default function LayoutDemoPage() {
           width={sideWidth}
           right={sidebarIsRight}
           full={sidebarIsFull}
-          className={_en('en-dark')}
+          className={_en('dark')}
         >
           {new Array(sidebarIsOverflow ? 100 : 10).fill(1).map((e, i) => (
             <div key={i}>第 {i + 1} 个侧栏子项</div>
@@ -108,7 +113,7 @@ export default function LayoutDemoPage() {
       {footerVisible && (
         <LayoutFooter
           height={footerHeight}
-          className={_en('en-dark')}
+          className={_en('dark')}
           style={{
             backgroundColor: 'var(--en-color-blue-80)',
             opacity: 0.45,
@@ -125,7 +130,7 @@ export default function LayoutDemoPage() {
     <EnLayout
       height={layoutHeight}
       width={layoutWidth}
-      className={_en('en-box-shadow-light-red-90', 'en-radius-8')}
+      className={_en('box-shadow-light-red-90', 'radius-8')}
     >
       {Container}
     </EnLayout>
@@ -154,13 +159,14 @@ export default function LayoutDemoPage() {
         </div>
         <div>
           {inputValueList.map(item => (
-            <div key={item[2]} className={_en('en-inline-block', 'en-padding-4')}>
-              <label className={_en('en-inline-block', 'en-padding-horizontal-12')}>
+            <div key={item[2]} className={_en('inline-block', 'padding-4')}>
+              <label className={_en('inline-block', 'padding-horizontal-12')}>
                 {item[2]}
               </label>
               <input
+                title="展示输入框"
                 value={item[0]}
-                className={_en('en-padding-horizontal-12')}
+                className={_en('padding-horizontal-12')}
                 onChange={e => item[1](e.target.value)}
               />
             </div>

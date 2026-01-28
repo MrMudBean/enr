@@ -8,7 +8,7 @@
  **************************************************/
 
 import { typeOf } from 'a-type-of-js';
-import { global_config_data } from 'data/config';
+// import { global_config_data } from 'data/config';
 
 /** 请求参数 */
 export type RequestOptions<T> = RequestInit & {
@@ -35,6 +35,9 @@ export class Req {
     },
   };
 
+  /**
+   *
+   */
   constructor() {
     Object.defineProperties(this, {
       options: {
@@ -50,6 +53,7 @@ export class Req {
   private beforeRequestHasCalled: boolean = false;
   /**
    * 请求前要执行的逻辑
+   * @param callback
    **/
   beforeRequest(callback: (options: ReqOptions) => void) {
     // if (this.beforeRequestHasCalled === true) {
@@ -72,7 +76,10 @@ export class Req {
     // }
   }
 
-  /**  使用 get 获取 text 数据 **/
+  /**
+   *  使用 get 获取 text 数据 *
+   * @param url
+   */
   async getText(url: string) {
     const result = await this.get(url);
     if (result === null) {
@@ -86,7 +93,12 @@ export class Req {
     }
   }
 
-  /**  使用 get 获取 json 数据 **/
+  /**
+   *  使用 get 获取 json 数据 *
+   * @param url
+   * @param data
+   * @param option
+   */
   async getJson<T>(
     url: string,
     data?: string | Record<string, string>,
@@ -115,6 +127,12 @@ export class Req {
 
   // 'Content-Type': 'application/json',
 
+  /**
+   *
+   * @param url
+   * @param data
+   * @param option
+   */
   async postJson<T>(url: string, data?: string | object, option?: RequestInit): Promise<T | null> {
     try {
       const result = await this.post(url, data, option);
@@ -126,6 +144,12 @@ export class Req {
 
     return null;
   }
+  /**
+   *
+   * @param url
+   * @param data
+   * @param option
+   */
   async postText(
     url: string,
     data?: string | object,
@@ -145,6 +169,9 @@ export class Req {
   /**
    * - application/json
    * - application/x-www-form-urlencoded
+   * @param url
+   * @param data
+   * @param option
    **/
   async post(url: string, data?: string | object, option?: RequestInit): Promise<Response | null> {
     const dataType = typeOf(data);
@@ -181,11 +208,17 @@ export class Req {
   /**
    * 使用 get
    * @param url 请求的网址
+   * @param options
    **/
   async get<T>(url: string, options?: RequestOptions<T>) {
     return await this.requestData(url, options);
   }
 
+  /**
+   *
+   * @param url
+   * @param options
+   */
   private async requestData(url: string, options?: RequestInit) {
     /**  解析请求 url  */
     const _parseUrl = this.parseUrl(url);
@@ -225,7 +258,10 @@ export class Req {
     }
   }
 
-  /**  解析 url 请求 */
+  /**
+   *  解析 url 请求
+   * @param url
+   */
   private parseUrl(url: string) {
     url = decodeURIComponent(url);
     const { options } = this;

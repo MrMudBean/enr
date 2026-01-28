@@ -1,4 +1,4 @@
-import { _en } from 'packages/enr/index.server';
+import { _en } from 'enr';
 
 /**
  * ## 等待样式展示
@@ -6,5 +6,5 @@ import { _en } from 'packages/enr/index.server';
  * @returns
  */
 export default function LoadingPage() {
-  return <div className={_en('en-loading')}>loading</div>;
+  return <div className={_en('loading')}>loading</div>;
 }

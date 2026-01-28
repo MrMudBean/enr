@@ -1,4 +1,10 @@
-import { _p, isWindows, pathJoin, readFileToJsonSync, runOtherCode } from 'a-node-tools';
+import {
+  _p,
+  isWindows,
+  pathJoin,
+  readFileToJsonSync,
+  runOtherCode,
+} from 'a-node-tools';
 import { copyTextToClipboard } from '@qqi/copy-text';
 import { brightBlackPen, cyanPen, randomPen } from 'color-pen';
 
@@ -21,7 +27,10 @@ _p(cyanPen('执行打包完毕'));
 await runOtherCode({ code: 'cd dist && pnpm pack', printLog: true });
 const info = readFileToJsonSync('./dist/package.json');
 const pack = info.name + '-' + info.version + '.tgz';
-const pwd = await runOtherCode({ code: isWindows ? 'echo %cd%' : 'pwd', printLog: false });
+const pwd = await runOtherCode({
+  code: isWindows ? 'echo %cd%' : 'pwd',
+  printLog: false,
+});
 
 const noLineBreak = str => str.replace(/\r?\n/g, '');
 if (pwd.success) {

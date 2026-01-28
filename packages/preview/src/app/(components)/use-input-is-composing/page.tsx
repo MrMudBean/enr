@@ -1,7 +1,8 @@
 'use client';
-import { useInputIsComposing } from 'customHooks/useInputIsComposing';
-import { dog } from 'packages/enr/dog';
+
+import { useInputIsComposing } from 'enr';
 import { useEffect, useRef } from 'react';
+import { dog } from 'zza/log';
 
 /**  使用输入框是否输入完成页面  */
 export default function UssInputIsComposingPage() {
@@ -10,6 +11,7 @@ export default function UssInputIsComposingPage() {
 
   /**
    * 更改测试
+   * @param e
    */
   function change(e: React.KeyboardEvent<HTMLInputElement>) {
     dog(e);
@@ -24,10 +26,16 @@ export default function UssInputIsComposingPage() {
       <div>
         <form>
           <div className="text-3xl text-teal-300 w-full bg-slate-500 rounded-xl shadow-sm shadow-teal-900  md:w-32 lg:w-48 p-4">
-            <input type="text" ref={inputRef} className="p-4" onKeyDown={change} />
+            <input
+              type="text"
+              placeholder="请输入"
+              ref={inputRef}
+              className="p-4"
+              onKeyDown={change}
+            />
           </div>
           <div className="p-4">
-            <input type="text" required className="p-2" />
+            <input type="text" required className="p-2" placeholder="请输入" />
           </div>
           <button>1246</button>
         </form>

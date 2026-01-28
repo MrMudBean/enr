@@ -2,6 +2,7 @@
   "name": "preview",
   "version": "1.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
     "diff": "jja pkg -d=淘宝",
     "push": "gvv",
@@ -13,14 +14,12 @@
     "start": "next start"
   },
   "overrides": {
-    "css-loader": "6.11.0"
+    "css-loader": "6.11.0",
+    "zza": "workspace:*",
+    "enr": "workspace:*"
   },
   "dependencies": {
-    "react-dom": "19.2.1",
-    "react": "19.2.1",
-    "a-js-tools": "^1.0.12",
-    "a-type-of-js": "^1.0.7",
-    "xcn": "^1.0.0",
-    "enr": "workspace:enr"
+    "zza": "workspace:*",
+    "enr": "workspace:*"
   }
 }

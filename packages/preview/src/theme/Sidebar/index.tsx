@@ -1,9 +1,9 @@
 'use client';
 
-import { TabList } from './types';
-import { TabItem } from './SidebarItem/Link';
+import type { HTMLAttributes } from 'react';
 import { styled } from 'styled-components';
-import { HTMLAttributes } from 'react';
+import { TabItem } from './SidebarItem/Link';
+import type { TabList } from './types';
 
 const NarContent = styled.div`
   grid-area: tab;
@@ -15,6 +15,8 @@ const NarContent = styled.div`
 
 /**
  * 左侧导航栏
+ * @param root0
+ * @param root0.data
  */
 export default function MainTab({
   data,
