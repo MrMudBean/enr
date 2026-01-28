@@ -237,7 +237,7 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
 
-  packages/core:
+  packages/enr:
     dependencies:
       '@babel/runtime':
         specifier: ^7.28.6
@@ -272,7 +272,7 @@ importers:
     dependencies:
       enr:
         specifier: workspace:*
-        version: link:../core
+        version: link:../enr
       zza:
         specifier: workspace:*
         version: link:../shared
@@ -8316,7 +8316,10 @@ snapshots:
       jest-runner: 25.5.4
       jest-runtime: 25.5.4
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - utf-8-validate
 
   '@jest/transform@25.5.1':
     dependencies:
@@ -12034,10 +12037,7 @@ snapshots:
       pretty-format: 25.5.0
       throat: 5.0.0
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - utf-8-validate
 
   jest-leak-detector@25.5.0:
     dependencies:
@@ -12515,7 +12515,7 @@ snapshots:
 
   md5.js@1.3.5:
     dependencies:
-      hash-base: 3.0.5
+      hash-base: 3.1.2
       inherits: 2.0.4
       safe-buffer: 5.2.1
 
